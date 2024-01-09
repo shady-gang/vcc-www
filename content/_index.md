@@ -5,11 +5,11 @@ type: docs
 
 ## Intro
 
-Vcc - the Vulkan Clang Compiler, is a proof-of-concept C and C++ compiler for Vulkan leveraging Clang as a front-end, and [Shady](/shady) our own research IR and compiler. Unlike other shading languages, Vcc aims to stick closely to standard C/C++ languages and merely adds a few new intrinsics to cover GPU features. Vcc is similar to CUDA or Metal in this regard, and aims to bring the advantages of standard host languages to Vulkan shaders[^which_api].
+Vcc - the Vulkan Clang Compiler, is a proof-of-concept C and C++ compiler for Vulkan leveraging Clang as a front-end, and [Shady](https://github.com/Hugobros3/shady) our own research IR and compiler. Unlike other shading languages, Vcc aims to stick closely to standard C/C++ languages and merely adds a few new intrinsics to cover GPU features. Vcc is similar to CUDA or Metal in this regard, and aims to bring the advantages of standard host languages to Vulkan shaders[^which_api].
 
 [^which_api]: While Vulkan is the primary target, the architecture of Vcc and Shady is applicable to other target languages and APIs, such as OpenGL/GLSL, or Metal. The former of which actually has some experimental code already present!
 
-![](/vcc.png)
+![](vcc.png)
 
 ## Key Features
 
@@ -29,14 +29,14 @@ Many of these capabilities are present in compute APIs, but are not supported in
 
 ## Status and Caveats
 
-Vcc is still a work-in-progress. While we do commit to making all the previously mentionned features work reliably, and generally attempt to bring the entirety of C and C++ to the GPU without subsetting, there are still limitations:
+Vcc is still a work-in-progress. While we do commit to making all the previously mentioned features work reliably, and generally attempt to bring the entirety of C and C++ to the GPU without sub-setting, there are still limitations:
 
  * Certain functions, such as `malloc`/`free` require communicating with the host kernel which we currently do not implement.
- * Non header-only librairies, including parts of the C and C++ standard libraries, will not work on the GPU without additional work, because of the way Vcc works.
+ * Non header-only libraries, including parts of the C and C++ standard libraries, will not work on the GPU without additional work, because of the way Vcc works.
    * While addressable, this would massively increase the scope of the project.
    * For now it's best to think of Vcc as only supporting a `-ffreestanding` dialect of C/C++
  * C++ exceptions and their corresponding LLVM instructions (`landingpad` etc) are not supported.
- * Function and data pointers are not portable between host and device. Taking addresses and passing them accross in either direction is UB - since Vulkan lacks a unified addressing extension this is a limitation we cannot address at this time.
+ * Function and data pointers are not portable between host and device. Taking addresses and passing them across in either direction is UB - since Vulkan lacks a unified addressing extension this is a limitation we cannot address at this time.
 
 ## Sample code
 

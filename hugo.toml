@@ -1,4 +1,4 @@
-#baseURL = 'https://graphics.cg.uni-saarland.de/vcc'
+baseURL = 'https://shady-gang.github.io/vcc/'
 languageCode = 'en-us'
 title = 'Vcc - the Vulkan Clang Compiler'
 theme='hugo-book'
