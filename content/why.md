@@ -7,15 +7,15 @@ This is a lot of effort. Why ?
 
 ## Dissatisfaction with "Legacy" Shading Languages
 
-Back in the early 2000s a significant revolution happened in the world of realtime computer graphics: we moved from "dumb" graphics accelerator that had only a fixed set of functionality (texturing slots, blended vertex colors, hardware T&L ... ) to increasingly programmable hardware. This hardware transition was accompanied by an API transition, de-emphasising the classic OpenGL state machine in favour of then-new high-level shading languages: GLSL and HLSL.
+Back in the early 2000s a significant revolution happened in the world of realtime computer graphics: we moved from "dumb" graphics accelerator that had only a fixed set of functionality (texturing slots, blended vertex colors, hardware T&L ... ) to increasingly programmable hardware. This hardware transition was accompanied by an API transition, de-emphasizing the classic OpenGL state machine in favour of then-new high-level shading languages: GLSL and HLSL.
 
-Since then, comparatively little has happened to the shading language ecosystem for graphics APIs. The aforementionned pair is still relevant for Vulkan and DirectX 12, even though the rest of the API surface has been dramatically modernised. Worse still, their once bleeding-edge capabilities have since then dulled in relevance, and the approach of having dedicated languages with custom syntax directly conflicts with the goals of GPU offloading and heterogenous compute.
+Since then, comparatively little has happened to the shading language ecosystem for graphics APIs. The aforementioned pair is still relevant for Vulkan and DirectX 12, even though the rest of the API surface has been dramatically modernized. Worse still, their once bleeding-edge capabilities have since then dulled in relevance, and the approach of having dedicated languages with custom syntax directly conflicts with the goals of GPU offloading and heterogenous compute.
 
 ### The Compute and Graphics Schism
 
-Many know there are two kinds of GPU APIs: compute and graphics. CUDA, ROCm and OpenCL are filed as the former, while Vulkan, DirectX and OpenGL would be the latter.  On the surface it would seem that graphics APIs and compute APIs overlap - both let you program the GPU, and in fact modern graphics APIs offer "compute shaders".
+Broadly speaking, there are two kinds of GPU APIs: compute and graphics. CUDA, ROCm and OpenCL are filed as the former, while Vulkan, DirectX and OpenGL would be the latter.  On the surface it would seem that graphics APIs and compute APIs overlap - both let you program the GPU, and in fact modern graphics APIs offer "compute shaders".
 
-But these compute shaders are not the same as the compute kernels found in dedicated GPGPU apis, and severely lag behind in terms of features. Modern GPGPUs APIs work towards making GPU programming as close to general programming as possible - implementing complete C and C++ ccompilers for GPUs that follow normal syntax.
+But these compute shaders are not the same as the compute kernels found in dedicated GPGPU apis, and severely lag behind in terms of features. Modern GPGPUs APIs work towards making GPU programming as close to general programming as possible - implementing complete C and C++ compilers for GPUs that follow normal syntax.
 
 ### Working Towards Single-Source GPU programming
 
@@ -27,7 +27,7 @@ What Vcc shares with OpenCL C, CUDA and even Metal to an extent, is this goal to
 
 ### The Maintenance Issue
 
-Due to their baggage as C-like languages that were neither proper subsets nor supersets of C or C++, GLSL and HLSL have had difficulties to adapt to the evolving API landscape. The support for modern features like `VK_KHR_buffer_device_address` is awkward [^awkward], and there is no shortage of bugs and issues plaguing DXC. The maintainers of DXC in fact intend to move to a mainline version of LLVM in the future, and we think this is the right approach, if perhaps not going far enough.
+Due to their baggage as C-like languages that were neither proper subsets nor super-sets of C or C++, GLSL and HLSL have had difficulties to adapt to the evolving API landscape. The support for modern features like `VK_KHR_buffer_device_address` is awkward [^awkward], and there is no shortage of bugs and issues plaguing DXC. The maintainers of DXC in fact intend to move to a mainline version of LLVM in the future, and we think this is the right approach, if perhaps not going far enough.
 
 [^awkward]: We believe this is due to their long legacy, where these languages had no pointers in the syntax at all. We get to simply expose the newfound support for pointers in shaders using standard pointer syntax!
 
