@@ -25,7 +25,7 @@ Vcc supports advanced C/C++ features usually left out of shading languages such 
    * Lets you write code in a functional style on the GPU without limitations
  * Arbitrary `goto` statements - code does not need to be strictly structured !
 
-Many of these capabilities are present in compute APIs, but are not supported in most graphics APIs such as DirectX or Vulkan. We aim to address this gap by proving these features can and should implemented. [More on why we think that's important](why)
+Many of these capabilities are present in compute APIs, but are not supported in most graphics APIs such as DirectX or Vulkan. We aim to address this gap by proving these features can and should be implemented. [More on why we think that's important.](why)
 
 ## Status and Caveats
 

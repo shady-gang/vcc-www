@@ -44,7 +44,7 @@ Vulkan shaders have to provide some extra information when declaring certain kin
 
 #### Descriptor set/binding annotations
 
-UBOs, SSBOs and texturing resources need to be annotatted with `descriptor_binding()` and `descriptor_set()`:
+UBOs, SSBOs and texturing resources need to be annotated with `descriptor_binding()` and `descriptor_set()`:
 
 ```c
 descriptor_set(0) descriptor_binding(1)

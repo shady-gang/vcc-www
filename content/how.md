@@ -11,13 +11,13 @@ As a language, it's close to SPIR-V and LLVM but we have our own twist on a few 
 
 You can think of Shady as implementing a futuristic dialect of SPIR-V that corresponds to our wishlist of features. We are currently working towards publishing papers on the internals of shady and we will be updating this website with more detail once we do.
 
-Shady is free software and we'de love to have other front-ends use it ! This is an [explicit goal](/why/) of the project.
+Shady is free software and we'd love to have other front-ends use it ! This is an [explicit goal](/why/) of the project.
 
 ## Relationship to Clang and LLVM
 
-Vcc is a wrapper for the `clang` driver and directs it to emit the LLVM IR for your source files. LLVM is not involved in any optimizations on the code, instead Shady parses the LLVM IR and runs it's set of optimization and legalization passes to turn the IR into something that can run on Vulkan. Finally, Shady emits SPIR-V code that you application can then use.
+Vcc is a wrapper for the `clang` driver and directs it to emit the LLVM IR for your source files. LLVM is not involved in any optimizations on the code, instead Shady parses the LLVM IR and runs its set of optimization and legalization passes to turn the IR into something that can run on Vulkan. Finally, Shady emits SPIR-V code that your application can then use.
 
-Vcc does _not_ use a fork of LLVM nor Clang. It needs to link against LLVM to use it's bitcode parser and C API, but any recent version of LLVM should work. Shady supports both typed and untyped pointers so a large range of LLVM versions should work with it.
+Vcc does _not_ use a fork of LLVM nor Clang. It needs to link against LLVM to use its bitcode parser and C API, but any recent version of LLVM should work. Shady supports both typed and untyped pointers so a large range of LLVM versions should work with it.
 
 ## Exposing SPIR-V/Vulkan as C/C++ language extensions
 

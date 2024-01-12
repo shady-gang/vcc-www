@@ -15,7 +15,7 @@ Since then, comparatively little has happened to the shading language ecosystem 
 
 Broadly speaking, there are two kinds of GPU APIs: compute and graphics. CUDA, ROCm and OpenCL are filed as the former, while Vulkan, DirectX and OpenGL would be the latter.  On the surface it would seem that graphics APIs and compute APIs overlap - both let you program the GPU, and in fact modern graphics APIs offer "compute shaders".
 
-But these compute shaders are not the same as the compute kernels found in dedicated GPGPU apis, and severely lag behind in terms of features. Modern GPGPUs APIs work towards making GPU programming as close to general programming as possible - implementing complete C and C++ compilers for GPUs that follow normal syntax.
+But these compute shaders are not the same as the compute kernels found in dedicated GPGPU APIs, and severely lag behind in terms of features. Modern GPGPUs APIs work towards making GPU programming as close to general programming as possible - implementing complete C and C++ compilers for GPUs that follow normal syntax.
 
 ### Working Towards Single-Source GPU programming
 
@@ -23,7 +23,7 @@ Vulkan is arguably not so far behind in capabilities compared to some compute AP
 
 What Vcc shares with OpenCL C, CUDA and even Metal to an extent, is this goal to align host and device code and even unify it. While Vcc is not a true "single source" compiler in the sense that one file can produce both host and device code, it is not only viable, but the intended use-case to have projects compiling the same code twice for host and device without modifications [^vcc_single_source].
 
-[^vcc_single_source]: Making Vcc a "true" single-source framework is out of scope and would involve basically working with Clang's existing offloading support. This is considered out-of-scope for now.
+[^vcc_single_source]: Making Vcc a "true" single-source framework would involve working with Clang's existing offloading support and is considered out of scope for now.
 
 ### The Maintenance Issue
 
