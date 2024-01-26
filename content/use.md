@@ -5,7 +5,7 @@ type: docs
 
 ## Getting a copy of Vcc
 
-There currently are no release builds available for Vcc, however it can be compiled as part of Shady which is freely available on [GitHub](https://github.com/Hugobros3/shady). The following dependencies are required:
+There currently are no release builds available for Vcc, however it can be compiled as part of Shady which is freely available on [GitHub](https://github.com/shady-gang/shady). The following dependencies are required:
 
  * A C11 compliant compiler
  * CMake 3.13 or later
@@ -23,7 +23,7 @@ Vcc is used much like GCC or Clang is. In fact, most arguments are just forwarde
 
 ### Language extensions and <shady.h>
 
-See [C/C++ Language Extensions](/language-extensions/).
+See [C/C++ Language Extensions](/language-extensions).
 
 ### Required Vulkan version and capabilities
 

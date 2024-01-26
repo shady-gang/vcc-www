@@ -6,7 +6,7 @@ draft: true
 
 ## What is Shady
 
-Vcc is little more than a front-end for [Shady](https://github.com/Hugobros3/shady), a compiler and IR resulting of years of research and development at Saarland University. Shady was initially started to rationalise our GPU backends by supporting Vulkan in [AnyDSL](https://anydsl.github.io/)
+Vcc is little more than a front-end for [Shady](https://github.com/shady-gang/shady), a compiler and IR resulting of years of research and development at Saarland University. Shady was initially started to rationalise our GPU backends by supporting Vulkan in [AnyDSL](https://anydsl.github.io/)
 
 Shady is written in standard C11 in an effort to keep it lightweight, portable and aligned with similar compilers such as NIR. The IR is mostly treated as immutable and passes are designed to _rewrite_ code instead of mutating it.
 

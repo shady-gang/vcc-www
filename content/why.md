@@ -39,5 +39,5 @@ We have been privately arguing for evolving towards a simpler, more expressive f
 
 There is a chicken and egg problem here however, and that is that IHVs are less inclined to spend engineering resources supporting a feature that may require significant internal compiler changes, meanwhile you cannot simply bolt a SPIR-V back-end to LLVM and have that work with Vulkan, due to all the [constraints](https://xol.io/blah/the-trouble-with-spirv/) imposed by Vulkan.
 
-We hope to contribute to solving this chicken and egg problem with [Shady](/how/) by removing the bigger limitations that we find stand in the way. Vcc is the result of this work.
+We hope to contribute to solving this chicken and egg problem with [Shady](/how) by removing the bigger limitations that we find stand in the way. Vcc is the result of this work.
 

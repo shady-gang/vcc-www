@@ -5,7 +5,7 @@ type: docs
 
 ## Intro
 
-Vcc - the Vulkan Clang Compiler, is a proof-of-concept C and C++ compiler for Vulkan leveraging Clang as a front-end, and [Shady](https://github.com/Hugobros3/shady) our own research IR and compiler. Unlike other shading languages, Vcc aims to stick closely to standard C/C++ languages and merely adds a few new intrinsics to cover GPU features. Vcc is similar to CUDA or Metal in this regard, and aims to bring the advantages of standard host languages to Vulkan shaders[^which_api].
+Vcc - the Vulkan Clang Compiler, is a proof-of-concept C and C++ compiler for Vulkan leveraging Clang as a front-end, and [Shady](https://github.com/shady-gang/shady) our own research IR and compiler. Unlike other shading languages, Vcc aims to stick closely to standard C/C++ languages and merely adds a few new intrinsics to cover GPU features. Vcc is similar to CUDA or Metal in this regard, and aims to bring the advantages of standard host languages to Vulkan shaders[^which_api].
 
 [^which_api]: While Vulkan is the primary target, the architecture of Vcc and Shady is applicable to other target languages and APIs, such as OpenGL/GLSL, or Metal. The former of which actually has some experimental code already present!
 
