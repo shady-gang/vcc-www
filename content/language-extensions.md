@@ -51,7 +51,7 @@ descriptor_set(0) descriptor_binding(1)
 uniform int my_funny_buffer[256];
 ```
 
-#### Shader input / outputs
+#### Shader I/O
 
 Similar to recent versions of GLSL, `input` and `output` variables need to provide a `location(N)`:
 
@@ -63,14 +63,24 @@ location(0)
 output vec4 pixelColor;
 ```
 
-#### Push constants
+See the following list of address soaces
 
 ### Address spaces
 
 LLVM and Clang already support address spaces using the `__attribute__((address_space(N)))` syntax. Shady merely reserves some numbers for custom address spaces, and tries to line up with other targets where possible.
 
-TODO: table
+| Vcc keyword | SPIR-V Storage class | Purpose |
+| ----- | --- | --- |
+| `input` | `Input` | Pipeline-specific inputs |
+| `output` | `Output` | Pipeline-specific outputs |
+| `uniform_constant` | `UniformConstant` | Most opaque descriptor-bound resources (samplers, textures, ...)
+| `uniform_block` | `Uniform` | Vulkan UBOs |
+| `shared` | `Workgroup` | Workgroup-visible local memory |
+| `private` | `Private` / `Function` | Invocation private memory |
+| `global` | `PhysicalStorageBuffer` | Main memory (VRAM and mapped host memory) |
 
-While Shady supports generic pointers, only `private`, `shared` and `global` will be able to work with them. There are many more address spaces found in SPIR-V that have usage restrictions that make them pointless to support in generic pointers, and therefore those need to be explicitly specified. This is also true for global variables.
+While Shady supports generic pointers, only `private`, `shared` and `global` will be able to work with them. There are many more address spaces found in SPIR-V that have usage restrictions that make them pointless to support in generic pointers, and therefore those need to be explicitly specified.
+
+This is also true for global variables: while you can get a generic pointer to them (just cast it!), the variables do need to be allocated _somewhere_ !
 
 ### Texturing
