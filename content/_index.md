@@ -43,7 +43,7 @@ Vcc is still a work-in-progress. While we do commit to making all the previously
 ```c
 #include <shady.h>
 
-descriptor_set(0) descriptor_binding(1) uniform sampler2D texSampler;
+descriptor_set(0) descriptor_binding(1) uniform_constant sampler2D texSampler;
 
 location(0) input vec3 fragColor;
 location(1) input vec2 fragTexCoord;
