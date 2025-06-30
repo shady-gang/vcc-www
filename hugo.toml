@@ -2,7 +2,7 @@ baseURL = 'https://shady-gang.github.io/vcc'
 languageCode = 'en-us'
 title = 'Vcc - the Vulkan Clang Compiler'
 theme='hugo-book'
-relativeURLs = true
+relativeURLs = false
 canonifyURLs = true
 
 [markup.goldmark.renderer]
