@@ -9,8 +9,6 @@ Vcc - the Vulkan Clang Compiler, is a proof-of-concept C and C++ compiler for Vu
 
 [^which_api]: While Vulkan is the primary target, the architecture of Vcc and Shady is applicable to other target languages and APIs, such as OpenGL/GLSL, or Metal. The former of which actually has some experimental code already present!
 
-![](vcc.png)
-
 ## Key Features
 
 Vcc supports advanced C/C++ features usually left out of shading languages such as HLSL or GLSL, in particular raising the bar when it comes to pointer support and control-flow:

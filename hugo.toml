@@ -10,3 +10,4 @@ canonifyURLs = true
 
 [params]
   BookSection = "*"
+  BookLogo = 'vcc.png'
